@@ -6,6 +6,11 @@
 @layer base {
   html {
     font-family: 'DM Sans', sans-serif;
+    @apply text-hr-text;
+  }
+
+  a {
+    @apply text-hr-primary-light;
   }
 
   h1,
@@ -16,4 +21,7 @@
   h6 {
     font-family: 'Raleway', sans-serif;
   }
+}
+
+.bg-gradient {
 }
