@@ -1,0 +1,44 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+const images = [
+  '/images/plumber-1.png',
+  '/images/plumber-2.png',
+  '/images/plumber-3.png',
+];
+---
+
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    {
+      images.map((image) => (
+        <div class="swiper-slide flex justify-center">
+          <img src={image} alt="Plumber" />
+        </div>
+      ))
+    }
+  </div>
+</div>
+<style>
+  .swiper {
+  }
+</style>
+<script>
+  import Swiper from 'swiper';
+  import { Autoplay } from 'swiper/modules';
+
+  new Swiper('.swiper', {
+    // Optional parameters
+    modules: [Autoplay],
+    direction: 'horizontal',
+    initialSlide: 2,
+    centeredSlides: true,
+    loop: true,
+    autoplay: true,
+    speed: 1000,
+  });
+</script>

@@ -1,0 +1,19 @@
+---
+interface Props {
+  image: string;
+  title: string;
+}
+
+const { image, title } = Astro.props;
+---
+
+<div
+  style={`background-image: url('${image}')`}
+  class="group cursor-pointer h-[230px] bg-cover bg-center bg-no-repeat w-[400px] max-w-full flex flex-col items-center rounded-xl"
+>
+  <p
+    class="group-hover:bg-hr-primary-light duration-300 text-xs sm:text-md bg-hr-primary px-7 py-3 max-w-fit rounded-full font-medium text-white inline-block mt-4"
+  >
+    {title}
+  </p>
+</div>
