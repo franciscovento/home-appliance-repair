@@ -1,13 +1,19 @@
 ---
+import CallToAction from './CallToAction.astro';
+
 interface Props {
+  id: number;
   image: string;
   title: string;
+  description: string;
 }
 
-const { image, title } = Astro.props;
+const { image, title, description, id } = Astro.props;
 ---
 
-<div
+<button
+  id={id.toString()}
+  aria-label="serviceButton"
   style={`background-image: url('${image}')`}
   class="group cursor-pointer h-[230px] bg-cover bg-center bg-no-repeat w-[400px] max-w-full flex flex-col items-center rounded-xl"
 >
@@ -16,4 +22,129 @@ const { image, title } = Astro.props;
   >
     {title}
   </p>
-</div>
+</button>
+<dialog id={`modal-${id}`} class="modal">
+  <div class="relative">
+    <CallToAction
+      title={title}
+      description={description}
+      titleColor="primary"
+      buttonText="Make it work again!"
+    />
+    <button class="closeButton absolute top-2 right-4 bold">X</button>
+  </div>
+  <!-- <div
+    id={`overlay-${id}`}
+    class="overlay fixed top-0 left-0 animate-fadeIn bg-black/55 w-full h-full z-20"
+  >
+  </div> -->
+</dialog>
+
+<style>
+  .modal::backdrop {
+    background: #00000080;
+    opacity: 0.5;
+    animation: fade-in 500ms forwards;
+  }
+
+  .modal[open] {
+    animation:
+      slide-up 500ms forwards,
+      fade-in 500ms forwards;
+  }
+
+  .modal[closing] {
+    display: block;
+    pointer-events: none;
+    inset: 0;
+    animation: slide-down 500ms forwards;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+</style>
+
+<script>
+  let currentModal: HTMLDialogElement | null = null;
+  const modales = document.querySelectorAll('.modal');
+  const buttons = document.querySelectorAll('[aria-label="serviceButton"]');
+  const closeButtons = document.querySelectorAll('.closeButton');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      currentModal = document.getElementById(
+        `modal-${button.id}`
+      ) as unknown as HTMLDialogElement;
+      currentModal.showModal();
+    });
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      closeModal();
+    });
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+
+  modales.forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  });
+
+  function closeModal() {
+    if (currentModal) {
+      currentModal.setAttribute('closing', '');
+      currentModal.addEventListener(
+        'animationend',
+        () => {
+          currentModal?.removeAttribute('closing');
+          currentModal?.close();
+        },
+        { once: true }
+      );
+      currentModal.close();
+    }
+  }
+</script>

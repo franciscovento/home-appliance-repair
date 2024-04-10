@@ -14,26 +14,38 @@ const services = [
   {
     image: '/images/services/refrigerator.png',
     title: 'Refrigerator Repair',
+    description:
+      'Torn door seal door. Leaking from the refrigerator. No longer makes ice. Frost buildup. No longer dispenses water. Using too much power. Compressor is not working.',
   },
   {
     image: '/images/services/dishwasher.png',
     title: 'Dishwasher',
+    description:
+      "The dishwasher won't start at all. The dishwasher doesn't complete its cycle. The dishes remain dirty and cold after every cycle. Water leaks in your kitchen Strange and loud noises. Dishes won't dry.",
   },
   {
     image: '/images/services/microwave.png',
     title: 'Microwave Repair',
+    description:
+      'The microwave isn’t working. There are sparks inside the microwave. The turntable is not rotating. Microwave isn’t heating food. The touch pad only works intermittently.',
   },
   {
     image: '/images/services/dryer.png',
     title: 'Dryer Repair',
+    description:
+      'Dyer or washer not turning-on. Dryer isn’t producing heat. Dryer is running too hot. Washing machine not spinning Leaks. Water is not cold or hot Draining water.',
   },
   {
     image: '/images/services/garbage.png',
     title: 'Garbage Disposal',
+    description:
+      'Disposal won’t turn on. Garbage disposal won’t drain. Garbage disposal stopped working. There is a leak in one place or more. The garbage disposal is jammed. The garbage disposal is making excessive noise.',
   },
   {
     image: '/images/services/oven.png',
     title: 'Oven, Stove Repair',
+    description:
+      'The burner is not turning on. The burner is burning too hot, the Indicator Light remains on. The oven door is stuck. The oven or broiler are not getting hot. inconsistent temperatures',
   },
 ];
 ---
@@ -55,7 +67,10 @@ const services = [
       </div>
     </section>
     <div class="flex justify-center -mt-24 relative z-10 pb-20">
-      <CallToAction />
+      <CallToAction
+        title="Why wait?"
+        description=" Call us and let's get your appliances running smoothly again!"
+      />
     </div>
 
     <!-- WHY US? -->
@@ -103,9 +118,14 @@ const services = [
 
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
         {
-          services.map((service) => {
+          services.map((service, index) => {
             return (
-              <ServiceButton image={service.image} title={service.title} />
+              <ServiceButton
+                id={index}
+                image={service.image}
+                title={service.title}
+                description={service.description}
+              />
             );
           })
         }

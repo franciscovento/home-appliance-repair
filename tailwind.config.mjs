@@ -9,6 +9,7 @@ export default {
       lg: '1024px',
       xl: '1280px',
     },
+
     extend: {
       fontFamily: {
         title: ['Raleway', 'sans-serif'],
@@ -21,6 +22,30 @@ export default {
         'hr-secondary-light': '#F8CEA5',
         'hr-text': '#7A7A7A',
         'hr-background': '#F8F8F8',
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-in-out',
+        fadeUp: 'fadeUp 0.5s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
+        fadeUp: {
+          '0%': {
+            transform: 'translateY(20px)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: '1',
+          },
+        },
       },
     },
   },

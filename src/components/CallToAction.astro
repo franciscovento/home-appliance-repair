@@ -1,14 +1,41 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  titleColor?: 'normal' | 'primary';
+  buttonText?: string;
+}
+
+const {
+  title,
+  description,
+  titleColor = 'normal',
+  buttonText = '(408) 909-1844',
+} = Astro.props;
+---
+
 <section
   class="w-340px text-xl flex flex-col items-center p-5 justify-center gap-5 text-center max-w-80 bg-white rounded-xl shadow-[2px_15px_27.3px_5px_rgba(175,_190,_211,_0.22)]"
 >
   <div>
-    <p class="text-hr font-semibold pb-2">Why wait?</p>
-    <p>Call us and let's get your appliances running smoothly again!</p>
+    <p
+      class:list={[
+        {
+          'text-hr-text': titleColor === 'normal',
+          'text-hr-primary': titleColor === 'primary',
+        },
+      ]}
+      class="text-hr font-semibold pb-2"
+    >
+      {title}
+    </p>
+    <p class="text-base">{description}</p>
   </div>
-  <button
+  <a
+    href="tel:4089091844"
     class="bg-hr-secondary min-w-[300px] flex items-center gap-2 justify-center text-xl text-white px-6 py-2 rounded-full"
   >
-    (408) 909-1844
+    {buttonText}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="28"
@@ -20,5 +47,5 @@
         d="M14.8283 22.1377L20.6616 15.8877C20.7678 15.7689 20.8511 15.6287 20.9066 15.4752C21.0233 15.1709 21.0233 14.8296 20.9066 14.5252C20.8511 14.3718 20.7678 14.2316 20.6616 14.1127L14.8283 7.86273C14.7195 7.74618 14.5904 7.65373 14.4482 7.59066C14.3061 7.52758 14.1538 7.49512 14 7.49512C13.6893 7.49512 13.3913 7.62735 13.1716 7.86273C12.9519 8.09811 12.8285 8.41735 12.8285 8.75023C12.8285 9.08311 12.9519 9.40235 13.1716 9.63773L17.0216 13.7502L8.16663 13.7502C7.85721 13.7502 7.56046 13.8819 7.34167 14.1163C7.12287 14.3508 6.99996 14.6687 6.99996 15.0002C6.99996 15.3318 7.12287 15.6497 7.34167 15.8841C7.56046 16.1185 7.85721 16.2502 8.16663 16.2502L17.0216 16.2502L13.1716 20.3627C13.0623 20.4789 12.9755 20.6172 12.9163 20.7695C12.857 20.9218 12.8265 21.0852 12.8265 21.2502C12.8265 21.4152 12.857 21.5786 12.9163 21.731C12.9755 21.8833 13.0623 22.0215 13.1716 22.1377C13.2801 22.2549 13.4091 22.3479 13.5513 22.4113C13.6935 22.4748 13.8459 22.5075 14 22.5075C14.154 22.5075 14.3065 22.4748 14.4486 22.4113C14.5908 22.3479 14.7198 22.2549 14.8283 22.1377Z"
         fill="white"></path>
     </svg>
-  </button>
+  </a>
 </section>
