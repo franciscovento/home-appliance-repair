@@ -1,5 +1,7 @@
 ---
 import CallToAction from '../components/CallToAction.astro';
+import CommentsSlider from '../components/CommentsSlider.astro';
+import Counter from '../components/Counter.astro';
 import ImagesSlider from '../components/ImagesSlider.astro';
 import SectionTitle from '../components/SectionTitle.astro';
 import ServiceButton from '../components/ServiceButton.astro';
@@ -132,10 +134,45 @@ const services = [
       </div>
     </section>
 
-    <section>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, natus nemo?
-      Aspernatur quisquam reiciendis animi unde sequi sed, iure porro iste
-      beatae soluta molestiae nulla fuga in non, temporibus deserunt.
+    <section class="py-12 text-center">
+      <h3 class="text-2xl text-hr-primary text-center font-semibold pt-8">
+        Some Fun Facts About Us
+      </h3>
+      <div class="py-8 flex flex-col gap-8 sm:flex-row justify-around">
+        <Counter number={12} description="Years in service" />
+        <Counter number={20} description="Locations Serviced" />
+        <Counter number={100} description="Dedication to Customers" next="%" />
+      </div>
+
+      <button
+        class="bg-hr-primary text-white rounded-full w-[267px] max-w-full h-[60px] text-lg font-medium inline-block mt-8"
+        >Call For Expert Repairs</button
+      >
+    </section>
+
+    <section class="app-banner py-12 text-center bg-hr-background">
+      <h3 class="text-2xl text-hr-primary text-center font-semibold">
+        What Our Clients Say
+      </h3>
+
+      <CommentsSlider />
+      <button
+        class="border border-hr-primary text-hr-primary rounded-full w-[267px] max-w-full h-[60px] text-lg font-medium inline-block mt-8"
+        >I Need A Repair Now
+      </button>
+    </section>
+    <section
+      class="app-banner bg-gradient h-[400px] flex items-center justify-center text-center flex-col gap-4"
+    >
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl text-white font-semibold">
+        Appliance Repair Service Experts
+      </h1>
+      <div class="text-xl sm:text-3xl">
+        <p class="text-white">Trust the professionals!</p>
+        <div class="text-hr-secondary-light" aria-label="hidden">
+          Call us: <span class="font-bold">(408) 909-1844 </span>
+        </div>
+      </div>
     </section>
   </main>
 </Layout>

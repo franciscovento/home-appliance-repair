@@ -1,0 +1,50 @@
+---
+interface Props {
+  number: number;
+  description: string;
+  prev?: string;
+  next?: string;
+}
+
+const { number, next, description } = Astro.props;
+---
+
+<astro-counter
+  data-limit={number}
+  class="counter flex flex-col gap-1 items-center"
+>
+  <div>
+    <p class="text-7xl font-bold text-hr-primary flex items-center">
+      <button> {number} </button>
+      <span>
+        {next}
+      </span>
+    </p>
+  </div>
+  <span class="font-medium text-hr-primary-light">{description}</span>
+</astro-counter>
+<!-- <script>
+  class AstroCounter extends HTMLElement {
+    constructor(public limit: number) {
+      super();
+      this.limit = this.dataset.limit as unknown as number;
+      const button = this.querySelector('button') as HTMLButtonElement;
+      let counter = 0;
+      const totalTime = 1000;
+      const intervalTime = totalTime / this.limit;
+      const interval = setInterval(() => {
+        if (counter <= this.limit) {
+          button.textContent = counter.toString();
+          counter++;
+        } else {
+          clearInterval(interval); // Detener el intervalo cuando se alcanza el límite
+        }
+      }, intervalTime);
+    }
+    startCounter() {
+      console.log('Counter started');
+    }
+  }
+
+  customElements.define('astro-counter', AstroCounter);
+</script> -->
