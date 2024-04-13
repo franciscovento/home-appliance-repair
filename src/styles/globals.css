@@ -28,7 +28,7 @@
     @apply w-screen m-auto relative left-[calc(-50vw_+_50%)];
   }
   .app-container {
-    @apply m-auto px-4 xs:px-8 lg:max-w-6xl;
+    @apply m-auto px-4 xs:px-8 lg:max-w-5xl;
   }
 }
 
