@@ -31,7 +31,20 @@ const { image, title, description, id } = Astro.props;
       titleColor="primary"
       buttonText="Make it work again!"
     />
-    <button class="closeButton absolute top-2 right-4 bold">X</button>
+
+    <svg
+      class="closeButton absolute top-4 right-4 cursor-pointer"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+    >
+      <path d="M11 0.7H13V23.3H11z" transform="rotate(-45.001 12 12)"
+      ></path><path d="M0.7 11H23.3V13H0.7z" transform="rotate(-45.001 12 12)"
+      ></path>
+    </svg>
   </div>
 </dialog>
 

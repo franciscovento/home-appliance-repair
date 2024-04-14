@@ -1,4 +1,5 @@
 ---
+import { tel } from '../../constants';
 import CallToAction from '../components/CallToAction.astro';
 import CommentsSlider from '../components/CommentsSlider.astro';
 import Counter from '../components/Counter.astro';
@@ -7,7 +8,6 @@ import SectionTitle from '../components/SectionTitle.astro';
 import ServiceButton from '../components/ServiceButton.astro';
 import Layout from '../layouts/Layout.astro';
 import { benefits } from '../utils/data/benefits';
-
 const services = [
   {
     image: '/images/services/refrigerator.png',
@@ -49,7 +49,7 @@ const services = [
 ---
 
 <Layout title="Home Appliance Repair">
-  <main class="app-container">
+  <main class="app-container pt-[76px]">
     <!-- HERO BANNER -->
     <section
       class="app-banner bg-gradient h-[calc(100vh_-_250px)] flex items-center justify-center text-center flex-col gap-4"
@@ -60,7 +60,7 @@ const services = [
       <div class="text-xl sm:text-3xl">
         <p class="text-white">Trust the professionals!</p>
         <div class="text-hr-secondary-light" aria-label="hidden">
-          Call us: <span class="font-bold">(408) 909-1844 </span>
+          Call us: <span class="font-bold">{tel} </span>
         </div>
       </div>
     </section>
@@ -111,11 +111,12 @@ const services = [
           })
         }
       </div>
-      <button
-        class="border mx-auto min-w-[300px] border-hr-primary gap-2 text-lg font-medium text-hr-primary px-6 py-2 rounded-full"
+      <a
+        href={`tel:${tel}`}
+        class="border mx-auto inline-block min-w-[300px] border-hr-primary gap-2 text-lg font-medium text-hr-primary px-6 py-2 rounded-full"
       >
         Schedule a service
-      </button>
+      </a>
     </section>
 
     <section class="bg-hr-background app-banner py-12">
@@ -154,9 +155,10 @@ const services = [
         <Counter number={100} description="Dedication to Customers" next="%" />
       </div>
 
-      <button
-        class="bg-hr-primary text-white rounded-full w-[267px] max-w-full h-[60px] text-lg font-medium inline-block mt-8"
-        >Call For Expert Repairs</button
+      <a
+        href={`tel:${tel}`}
+        class="bg-hr-primary mx-auto text-white rounded-full w-[267px] max-w-full h-[60px] text-lg font-medium flex items-center justify-center mt-8"
+        >Call For Expert Repairs</a
       >
     </section>
 
@@ -166,10 +168,11 @@ const services = [
       </h3>
 
       <CommentsSlider />
-      <button
-        class="border border-hr-primary text-hr-primary rounded-full w-[267px] max-w-full h-[60px] text-lg font-medium inline-block mt-8"
+      <a
+        href={`tel:${tel}`}
+        class="border border-hr-primary text-hr-primary rounded-full w-[267px] max-w-full h-[60px] text-lg font-medium flex items-center justify-center mx-auto mt-8"
         >I Need A Repair Now
-      </button>
+      </a>
     </section>
 
     <section

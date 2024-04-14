@@ -1,4 +1,6 @@
 ---
+import { tel } from '../../constants';
+
 interface Props {
   title: string;
   description: string;
@@ -10,7 +12,7 @@ const {
   title,
   description,
   titleColor = 'normal',
-  buttonText = '(408) 909-1844',
+  buttonText = tel,
 } = Astro.props;
 ---
 
@@ -32,7 +34,7 @@ const {
     <p class="text-base">{description}</p>
   </div>
   <a
-    href="tel:4089091844"
+    href={`tel:${buttonText === 'tel' ? tel : buttonText}`}
     class="bg-hr-secondary min-w-[300px] flex items-center gap-2 justify-center text-xl text-white px-6 py-2 rounded-full"
   >
     {buttonText}
