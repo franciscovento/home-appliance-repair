@@ -1,19 +1,31 @@
 ---
 import Header from '../components/Header.astro';
 import '../styles/globals.css';
-
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <title>
+      Home Appliance Repairs | Cupertino & Surrounding Areas, California | Your
+      Trusted Repair Service
+    </title>
+    <meta
+      name="description"
+      content="Home Appliance Repairs is your trusted service for all home appliance repairs in Cupertino and surrounding areas of California. Our expert technicians are here to ensure your appliances are running smoothly. Call us today for reliable service!"
+    />
+    <!-- SEO -->
+    <meta
+      name="keywords"
+      content="home appliance repairs, Cupertino, California, appliance repair service, refrigerator repair, washer repair, dryer repair, oven repair, dishwasher repair, surrounding areas"
+    />
+    <meta name="geo.region" content="US-CA" />
+    <meta name="geo.placename" content="Cupertino and Surrounding Areas" />
+    <meta name="geo.position" content="37.3229;-122.0322" />
+    <meta name="ICBM" content="37.3229, -122.0322" />
+
+    <!-- SEO END -->
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -24,7 +36,6 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>{title}</title>
   </head>
   <body class="overflow-x-hidden">
     <Header />
