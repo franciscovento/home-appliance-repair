@@ -35,7 +35,6 @@ import { services } from '../utils/data/services';
           data-aos-delay="600"
           data-aos-duration="1000"
           class="text-white"
-          aria-label="hidden"
         >
           Call us: <a href={`tel:${tel}`} class="font-bold text-white"
             >{tel}
@@ -197,8 +196,10 @@ import { services } from '../utils/data/services';
       </h1>
       <div class="text-xl sm:text-3xl">
         <p class="text-white">Trust the professionals!</p>
-        <div class="text-hr-secondary-light" aria-label="hidden">
-          Call us: <span class="font-bold">(408) 909-1844 </span>
+        <div class="text-white">
+          Call us: <a href={`tel:${tel}`} class="font-bold text-white"
+            >{tel}
+          </a>
         </div>
       </div>
     </section>
