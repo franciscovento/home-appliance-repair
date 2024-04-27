@@ -34,10 +34,12 @@ import { services } from '../utils/data/services';
           data-aos="fade-in"
           data-aos-delay="600"
           data-aos-duration="1000"
-          class="text-hr-secondary-light"
+          class="text-white"
           aria-label="hidden"
         >
-          Call us: <span class="font-bold text-hr-secondary-light">{tel} </span>
+          Call us: <a href={`tel:${tel}`} class="font-bold text-white"
+            >{tel}
+          </a>
         </div>
       </div>
     </section>
