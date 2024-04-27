@@ -18,13 +18,7 @@ import { Image } from 'astro:assets';
     {
       benefits.map((benefit) => (
         <div class="swiper-slide flex justify-center">
-          <Image
-            src={benefit.image}
-            alt={benefit.alt}
-            width={321}
-            height={177}
-            loading={'lazy'}
-          />
+          <Image src={benefit.image} alt={benefit.alt} loading={'lazy'} />
         </div>
       ))
     }
