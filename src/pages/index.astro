@@ -10,45 +10,8 @@ import Layout from '../layouts/Layout.astro';
 import { benefits } from '../utils/data/benefits';
 import 'aos/dist/aos.css';
 import { brands } from '../utils/data/brands';
-
-const services = [
-  {
-    image: '/images/services/refrigerator.png',
-    title: 'Refrigerator Repair',
-    description:
-      'Torn door seal door. Leaking from the refrigerator. No longer makes ice. Frost buildup. No longer dispenses water. Using too much power. Compressor is not working.',
-  },
-  {
-    image: '/images/services/dishwasher.png',
-    title: 'Dishwasher',
-    description:
-      "The dishwasher won't start at all. The dishwasher doesn't complete its cycle. The dishes remain dirty and cold after every cycle. Water leaks in your kitchen Strange and loud noises. Dishes won't dry.",
-  },
-  {
-    image: '/images/services/microwave.png',
-    title: 'Microwave Repair',
-    description:
-      'The microwave isn’t working. There are sparks inside the microwave. The turntable is not rotating. Microwave isn’t heating food. The touch pad only works intermittently.',
-  },
-  {
-    image: '/images/services/dryer.png',
-    title: 'Dryer Repair',
-    description:
-      'Dyer or washer not turning-on. Dryer isn’t producing heat. Dryer is running too hot. Washing machine not spinning Leaks. Water is not cold or hot Draining water.',
-  },
-  {
-    image: '/images/services/garbage.png',
-    title: 'Garbage Disposal',
-    description:
-      'Disposal won’t turn on. Garbage disposal won’t drain. Garbage disposal stopped working. There is a leak in one place or more. The garbage disposal is jammed. The garbage disposal is making excessive noise.',
-  },
-  {
-    image: '/images/services/oven.png',
-    title: 'Oven, Stove Repair',
-    description:
-      'The burner is not turning on. The burner is burning too hot, the Indicator Light remains on. The oven door is stuck. The oven or broiler are not getting hot. inconsistent temperatures',
-  },
-];
+import { Image } from 'astro:assets';
+import { services } from '../utils/data/services';
 ---
 
 <Layout title="Home Appliance Repair">
@@ -108,10 +71,11 @@ const services = [
                 data-aos-duration="1500"
                 class="flex gap-8 flex-col items-baseline"
               >
-                <img
+                <Image
                   src={item.image}
-                  alt=""
+                  alt={item.alt}
                   class="hidden sm:inline-block w-[287px] h-[158px]"
+                  loading={'lazy'}
                 />
                 <div class="flex gap-2">
                   <svg
@@ -209,12 +173,13 @@ const services = [
         {
           brands.map((brand) => {
             return (
-              <img
+              <Image
                 src={brand.image}
-                alt={`repair ${brand.name}`}
+                alt={brand.alt}
                 width="200"
                 height="70"
                 class="w-[200px]"
+                loading={'lazy'}
               />
             );
           })
