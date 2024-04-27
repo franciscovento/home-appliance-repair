@@ -1,12 +1,13 @@
 ---
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-const images = [
-  '/images/plumber-1.webp',
-  '/images/plumber-2.webp',
-  '/images/plumber-3.webp',
-];
+import { benefits } from '../utils/data/benefits';
+import { Image } from 'astro:assets';
+// const images = [
+//   '/images/plumber-1.webp',
+//   '/images/plumber-2.webp',
+//   '/images/plumber-3.webp',
+// ];
 ---
 
 <!-- Slider main container -->
@@ -15,9 +16,15 @@ const images = [
   <div class="swiper-wrapper">
     <!-- Slides -->
     {
-      images.map((image) => (
+      benefits.map((benefit) => (
         <div class="swiper-slide flex justify-center">
-          <img src={image} alt="Plumber" />
+          <Image
+            src={benefit.image}
+            alt={benefit.alt}
+            width={321}
+            height={177}
+            loading={'lazy'}
+          />
         </div>
       ))
     }
