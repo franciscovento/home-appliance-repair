@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/dm-sans": "^5.0.6",
+    "@fontsource-variable/raleway": "^5.0.19",
     "aos": "^2.3.4",
     "astro": "^4.5.16",
     "swiper": "^11.1.1",

@@ -5,7 +5,7 @@
 
 @layer base {
   html {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans Variable', sans-serif;
     @apply text-hr-text;
   }
 
@@ -19,7 +19,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway Variable', sans-serif;
   }
 }
 
@@ -33,14 +33,6 @@
 }
 
 .bg-gradient {
-  /* background-image: linear-gradient(
-    100deg,
-    #1f519a 18.86%,
-    #1f9464 52.72%,
-    #1f9a5f 73.2%,
-    #d3bf8c 101%
-  ); */
-
   background-image: linear-gradient(
       100deg,
       rgba(31, 81, 154, 0.6) 6.07%,
