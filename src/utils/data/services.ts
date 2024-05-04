@@ -1,9 +1,9 @@
-import dishwasher from '../../assets/images/services/dishwasher.png';
-import dryer from '../../assets/images/services/dryer.png';
-import garbage from '../../assets/images/services/garbage.png';
-import microwave from '../../assets/images/services/microwave.png';
-import oven from '../../assets/images/services/oven.png';
-import refrigerator from '../../assets/images/services/refrigerator.png';
+import dishwasher from '../../assets/images/services/dishwasher.webp';
+import dryer from '../../assets/images/services/dryer.webp';
+import garbage from '../../assets/images/services/garbage.webp';
+import microwave from '../../assets/images/services/microwave.webp';
+import oven from '../../assets/images/services/oven.webp';
+import refrigerator from '../../assets/images/services/refrigerator.webp';
 
 export const services = [
   {
