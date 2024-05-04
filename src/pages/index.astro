@@ -12,6 +12,7 @@ import 'aos/dist/aos.css';
 import { brands } from '../utils/data/brands';
 import { Image } from 'astro:assets';
 import { services } from '../utils/data/services';
+import WhatsApp from '../components/client/WhatsApp.jsx';
 ---
 
 <Layout title="Home Appliance Repair">
@@ -202,6 +203,9 @@ import { services } from '../utils/data/services';
           </a>
         </div>
       </div>
+    </section>
+    <section class="fixed bottom-0 right-0 z-50">
+      <WhatsApp client:only="react" />
     </section>
   </main>
 </Layout>
