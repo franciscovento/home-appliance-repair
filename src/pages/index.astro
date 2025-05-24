@@ -19,8 +19,20 @@ import WhatsApp from '../components/client/WhatsApp.jsx';
   <main class="app-container pt-[76px]">
     <!-- HERO BANNER -->
     <section
-      class="app-banner bg-gradient h-[calc(100vh_-_250px)] flex items-center justify-center text-center flex-col gap-4"
+      class="app-banner h-[calc(100vh_-_250px)] flex items-center justify-center text-center flex-col gap-4"
     >
+      <img
+        src="/images/hero.webp"
+        alt="Appliance repair team at work"
+        class={`absolute inset-0 w-full h-full object-cover -z-10`}
+        fetchpriority="high"
+        width="1920"
+        height="1080"
+      />
+
+      <!-- Gradient overlay -->
+      <div class={`absolute inset-0 -z-0 bg-gradient h-full`}></div>
+
       <h1
         data-aos="fade-down"
         class="text-3xl sm:text-4xl lg:text-5xl text-white font-semibold"
