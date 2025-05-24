@@ -10,10 +10,28 @@ import Layout from '../layouts/Layout.astro';
 import { benefits } from '../utils/data/benefits';
 import 'aos/dist/aos.css';
 import { brands } from '../utils/data/brands';
-import { Image } from 'astro:assets';
+import { getImage, Image, Picture } from 'astro:assets';
 import { services } from '../utils/data/services';
 import WhatsApp from '../components/client/WhatsApp.jsx';
-import bannerImg from '../assets/images/hero.webp';
+import heroDesktop from '../assets/images/hero.webp';
+import heroMobile from '../assets/images/hero-mobile.jpg';
+
+// Procesa las imágenes con getImage
+const optimizedDesktop = await getImage({
+  src: heroDesktop,
+  width: 1728,
+  height: 625,
+  format: 'webp',
+  quality: 80,
+});
+
+const optimizedMobile = await getImage({
+  src: heroMobile,
+  width: 768,
+  height: 625,
+  format: 'webp',
+  quality: 80,
+});
 ---
 
 <Layout title="Home Appliance Repair">
@@ -22,18 +40,27 @@ import bannerImg from '../assets/images/hero.webp';
     <section
       class="app-banner h-[calc(100vh_-_250px)] flex items-center justify-center text-center flex-col gap-4"
     >
-      <Image
-        src={bannerImg}
+      <!-- Componente Picture con art direction -->
+      <Picture
+        src={heroDesktop}
         alt="Appliance repair team at work"
-        class={`absolute inset-0 w-full h-full object-cover -z-10`}
-        fetchpriority="high"
-        width={bannerImg.width}
-        height={bannerImg.height}
-        loading={'eager'}
-        format="webp"
-        quality={80}
-        sizes="(max-width: 768px) 100vw, 1728px"
-      />
+        class="absolute inset-0 w-full h-full object-cover -z-10"
+        loading="eager"
+        decoding="async"
+      >
+        <source
+          media="(max-width: 768px)"
+          srcset={optimizedMobile.src}
+          width={optimizedMobile.options.width}
+          height={optimizedMobile.options.height}
+        />
+        <source
+          media="(min-width: 769px)"
+          srcset={optimizedDesktop.src}
+          width={optimizedDesktop.options.width}
+          height={optimizedDesktop.options.height}
+        />
+      </Picture>
 
       <!-- Gradient overlay -->
       <div class={`absolute inset-0 -z-0 bg-gradient h-full`}></div>
