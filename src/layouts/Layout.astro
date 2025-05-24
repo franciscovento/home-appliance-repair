@@ -66,6 +66,7 @@ import '../styles/globals.css';
         "name": "Smart Nest Repair",
         "image": "https://smartnestrepair.com/logo.png",
         "telephone": "+1-408-909-1844",
+        "email": "support@smartnestrepair.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "123 Main St",
@@ -79,30 +80,87 @@ import '../styles/globals.css';
           "latitude": 37.3229,
           "longitude": -122.0322
         },
-        "openingHours": ["Mo-Su 08:00-20:00"],
+        "openingHours": "Mo-Su 08:00-20:00",
         "url": "https://smartnestrepair.com",
-        "serviceArea": {
-          "@type": "Place",
-          "name": "Cupertino, Los Altos, Santa Clara County, San Mateo County",
-          "areaServed": [
-            {
-              "@type": "PostalCodeRange",
-              "postalCodeBegin": "94022",
-              "postalCodeEnd": "94024"
-            },
-            "95014",
-            "95051",
-            "95054",
-            "95050",
-            "94087",
-            "94086",
-            "94040",
-            "94041",
-            "94043",
-            "94301",
-            "94303"
-          ]
-        },
+        "areaServed": [
+          {
+            "@type": "Place",
+            "name": "Cupertino",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Cupertino",
+              "addressRegion": "CA",
+              "postalCode": "95014",
+              "addressCountry": "US"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "Los Altos",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Los Altos",
+              "addressRegion": "CA",
+              "postalCode": "94022",
+              "addressCountry": "US"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "Sunnyvale",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Sunnyvale",
+              "addressRegion": "CA",
+              "postalCode": "94087",
+              "addressCountry": "US"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "Mountain View",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Mountain View",
+              "addressRegion": "CA",
+              "postalCode": "94040",
+              "addressCountry": "US"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "Santa Clara",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Santa Clara",
+              "addressRegion": "CA",
+              "postalCode": "95050",
+              "addressCountry": "US"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "Palo Alto",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Palo Alto",
+              "addressRegion": "CA",
+              "postalCode": "94301",
+              "addressCountry": "US"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "Los Gatos",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Los Gatos",
+              "addressRegion": "CA",
+              "postalCode": "95030",
+              "addressCountry": "US"
+            }
+          }
+        ],
         "makesOffer": [
           {
             "@type": "Offer",
@@ -132,8 +190,7 @@ import '../styles/globals.css';
             }
           }
         ],
-        "paymentAccepted": "Cash, Credit Card, Apple Pay, Bank Transfer, PayPal",
-        "email": "support@smartnestrepair.com"
+        "paymentAccepted": "Cash, Credit Card, Apple Pay, Bank Transfer, PayPal"
       }
     </script>
   </head>
