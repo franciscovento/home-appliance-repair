@@ -13,7 +13,6 @@ import { brands } from '../utils/data/brands';
 import { Image } from 'astro:assets';
 import { services } from '../utils/data/services';
 import WhatsApp from '../components/client/WhatsApp.jsx';
-import heroBanner from '../assets/images/hero.webp';
 ---
 
 <Layout title="Home Appliance Repair">
@@ -22,15 +21,11 @@ import heroBanner from '../assets/images/hero.webp';
     <section
       class="app-banner h-[calc(100vh_-_250px)] flex items-center justify-center text-center flex-col gap-4"
     >
-      <Image
-        src={heroBanner}
+      <img
+        src="/images/hero.webp"
         alt="Appliance repair team at work"
         class={`absolute inset-0 w-full h-full object-cover -z-10`}
         fetchpriority="high"
-        widths={[640, 768, 1024, 1280, 1536, 1920]}
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
-        format="webp"
-        loading="eager"
       />
 
       <!-- Gradient overlay -->
