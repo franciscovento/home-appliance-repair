@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/dm-sans';
 import '@fontsource-variable/raleway';
+import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import '../styles/globals.css';
 ---
@@ -9,14 +10,20 @@ import '../styles/globals.css';
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>
+    <!-- <title>
       Home Appliance Repairs | Cupertino & Surrounding Areas, California | Your
       Trusted Repair Service
     </title>
     <meta
       name="description"
       content="Home Appliance Repairs is your trusted service for all home appliance repairs in Cupertino and surrounding areas of California. Our expert technicians are here to ensure your appliances are running smoothly. Call us today for reliable service!"
+    /> -->
+    <title>Appliance Repair in Cupertino, CA | Smart Nest Repair Experts</title>
+    <meta
+      name="description"
+      content="Smart Nest Repair offers fast, reliable refrigerator, dishwasher, dryer & oven repair in Cupertino, CA. 24/7 emergency service—call (408) 909-1844 today!"
     />
+
     <!-- SEO -->
     <meta
       name="keywords"
@@ -29,7 +36,12 @@ import '../styles/globals.css';
 
     <!-- SEO END -->
     <meta name="viewport" content="width=device-width" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#1F519A" />
     <meta name="generator" content={Astro.generator} />
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,9 +59,87 @@ import '../styles/globals.css';
       imagesrcset="/images/hero.webp"
       imagesizes="100vw"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Smart Nest Repair",
+        "image": "https://smartnestrepair.com/logo.png",
+        "telephone": "+1-408-909-1844",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Main St",
+          "addressLocality": "Cupertino",
+          "addressRegion": "CA",
+          "postalCode": "95014",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 37.3229,
+          "longitude": -122.0322
+        },
+        "openingHours": ["Mo-Su 08:00-20:00"],
+        "url": "https://smartnestrepair.com",
+        "serviceArea": {
+          "@type": "Place",
+          "name": "Cupertino, Los Altos, Santa Clara County, San Mateo County",
+          "areaServed": [
+            {
+              "@type": "PostalCodeRange",
+              "postalCodeBegin": "94022",
+              "postalCodeEnd": "94024"
+            },
+            "95014",
+            "95051",
+            "95054",
+            "95050",
+            "94087",
+            "94086",
+            "94040",
+            "94041",
+            "94043",
+            "94301",
+            "94303"
+          ]
+        },
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Refrigerator Repair" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Dishwasher Repair" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Dryer Repair" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Oven Repair" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Washer Repair" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Appliance Service"
+            }
+          }
+        ],
+        "paymentAccepted": "Cash, Credit Card, Apple Pay, Bank Transfer, PayPal",
+        "email": "support@smartnestrepair.com"
+      }
+    </script>
   </head>
   <body class="overflow-x-hidden">
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>

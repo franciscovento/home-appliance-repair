@@ -47,6 +47,7 @@ const optimizedMobile = await getImage({
         class="absolute inset-0 w-full h-full object-cover -z-10"
         loading="eager"
         decoding="async"
+        fetchpriority={'high'}
       >
         <source
           media="(max-width: 768px)"
@@ -69,7 +70,7 @@ const optimizedMobile = await getImage({
         data-aos="fade-down"
         class="text-3xl sm:text-4xl lg:text-5xl text-white font-semibold"
       >
-        Appliance Repair Service Experts
+        Appliance Repair in Cupertino, CA
       </h1>
       <div class="text-xl sm:text-3xl">
         <p data-aos="fade-down" data-aos-delay="200" class="text-white">
@@ -103,6 +104,14 @@ const optimizedMobile = await getImage({
 
     <section class="pb-12 text-center">
       <SectionTitle title="Why us?" subtitle="Efficiency in every fix." />
+      <p data-aos="fade-in" class="pt-12">
+        At Smart Nest Repair, we proudly serve every corner of Cupertino—from
+        the tree-lined streets of Monta Vista (95014) and the bustling shops
+        around Cupertino Village (95015), to the cozy homes of Rancho Rinconada,
+        Lawson, and the Vallco neighborhood. No matter where you’re located, our
+        certified technicians are ready with same-day service and 24/7 emergency
+        repairs to keep your appliances running smoothly
+      </p>
       <div class="sm:hidden pt-8">
         <ImagesSlider />
       </div>
@@ -233,21 +242,25 @@ const optimizedMobile = await getImage({
       </div>
     </section>
 
-    <section
-      class="app-banner bg-gradient h-[400px] flex items-center justify-center text-center flex-col gap-4"
+    <!-- <section
+      class="app-banner bg-hr-background h-[400px] flex items-center justify-center text-center flex-col gap-4"
     >
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl text-white font-semibold">
-        Appliance Repair Service Experts
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl text-hr-primary font-semibold"
+      >
+        Appliance Repair in Cupertino, CA
       </h2>
       <div class="text-xl sm:text-3xl">
-        <p class="text-white">Trust the professionals!</p>
-        <div class="text-white">
-          Call us: <a href={`tel:${tel}`} class="font-bold text-white"
+        <p class="text-hr-primary-light">Trust the professionals!</p>
+        <div class="text-hr-primary-light">
+          Call us: <a
+            href={`tel:${tel}`}
+            class="font-bold text-hr-primary-light"
             >{tel}
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
     <section class="fixed bottom-0 right-0 z-50">
       <WhatsApp client:only="react" />
     </section>

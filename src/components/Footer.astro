@@ -1,0 +1,52 @@
+---
+import Clock from '../assets/svg/Clock.astro';
+import MapPing from '../assets/svg/MapPing.astro';
+import Phone from '../assets/svg/Phone.astro';
+---
+
+<footer class="bg-gradient-dark text-white py-16">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      {/* Address Column */}
+      <div class="space-y-4">
+        <div class="flex justify-center">
+          <div class="bg-white/20 p-3 rounded-full">
+            <MapPing class="w-6 h-6" />
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold">Address</h3>
+        <div class="text-white/90 space-y-1">
+          <p>10162 Beardon Dr.</p>
+          <p>Cupertino, CA 95014</p>
+        </div>
+      </div>
+
+      {/* Phone Column */}
+      <div class="space-y-4">
+        <div class="flex justify-center">
+          <div class="bg-white/20 p-3 rounded-full">
+            <Phone class="w-6 h-6" />
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold">Phone</h3>
+        <div class="text-white/90">
+          <p class="text-lg font-medium">(408) 909-1844</p>
+        </div>
+      </div>
+
+      {/* Hours of Operation Column */}
+      <div class="space-y-4">
+        <div class="flex justify-center">
+          <div class="bg-white/20 p-3 rounded-full">
+            <Clock class="w-6 h-6" />
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold">Hours of Operation</h3>
+        <div class="text-white/90 space-y-1 text-sm">
+          <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
+          <p>Saturday - Sunday: 8:00 AM - 8:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

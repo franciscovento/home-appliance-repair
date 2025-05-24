@@ -44,3 +44,16 @@
   background-size: cover;
   background-position: center;
 }
+
+.bg-gradient-dark {
+  background-image: linear-gradient(
+    100deg,
+    rgba(26, 63, 127, 0.7) 6.07%,
+    rgba(26, 124, 83, 0.7) 40.78%,
+    rgba(26, 130, 78, 0.7) 58.45%,
+    rgba(225, 142, 86, 0.7) 82.42%
+  );
+
+  background-size: cover;
+  background-position: center;
+}

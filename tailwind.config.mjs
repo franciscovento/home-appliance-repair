@@ -20,7 +20,7 @@ export default {
         'hr-primary-light': '#0073B0',
         'hr-secondary': '#F3743A',
         'hr-secondary-light': '#F8CEA5',
-        'hr-text': '#7A7A7A',
+        'hr-text': '#212121',
         'hr-background': '#F8F8F8',
       },
       animation: {
