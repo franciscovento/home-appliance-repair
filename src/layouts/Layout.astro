@@ -4,6 +4,16 @@ import '@fontsource-variable/raleway';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import '../styles/globals.css';
+
+const {
+  title = 'Appliance Repair in Cupertino, CA | Smart Nest Repair Experts',
+  description = 'Smart Nest Repair offers fast, reliable refrigerator, dishwasher, dryer & oven repair in Cupertino, CA. 24/7 emergency service—call (408) 909-1844 today!',
+  keywords = 'home appliance repairs, Cupertino, California, appliance repair service, refrigerator repair, washer repair, dryer repair, oven repair, dishwasher repair, surrounding areas',
+  geoRegion = 'US-CA',
+  geoPlacename = 'Cupertino and Surrounding Areas',
+  geoPosition = '37.3229;-122.0322',
+  geoICBM = '37.3229, -122.0322',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -18,21 +28,15 @@ import '../styles/globals.css';
       name="description"
       content="Home Appliance Repairs is your trusted service for all home appliance repairs in Cupertino and surrounding areas of California. Our expert technicians are here to ensure your appliances are running smoothly. Call us today for reliable service!"
     /> -->
-    <title>Appliance Repair in Cupertino, CA | Smart Nest Repair Experts</title>
-    <meta
-      name="description"
-      content="Smart Nest Repair offers fast, reliable refrigerator, dishwasher, dryer & oven repair in Cupertino, CA. 24/7 emergency service—call (408) 909-1844 today!"
-    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
 
     <!-- SEO -->
-    <meta
-      name="keywords"
-      content="home appliance repairs, Cupertino, California, appliance repair service, refrigerator repair, washer repair, dryer repair, oven repair, dishwasher repair, surrounding areas"
-    />
-    <meta name="geo.region" content="US-CA" />
-    <meta name="geo.placename" content="Cupertino and Surrounding Areas" />
-    <meta name="geo.position" content="37.3229;-122.0322" />
-    <meta name="ICBM" content="37.3229, -122.0322" />
+    <meta name="keywords" content={keywords} />
+    <meta name="geo.region" content={geoRegion} />
+    <meta name="geo.placename" content={geoPlacename} />
+    <meta name="geo.position" content={geoPosition} />
+    <meta name="ICBM" content={geoICBM} />
 
     <!-- SEO END -->
     <meta name="viewport" content="width=device-width" />
