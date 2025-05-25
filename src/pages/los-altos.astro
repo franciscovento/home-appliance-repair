@@ -14,7 +14,7 @@ import { getImage, Image, Picture } from 'astro:assets';
 import { services } from '../utils/data/services';
 import WhatsApp from '../components/client/WhatsApp.jsx';
 import heroDesktop from '../assets/images/hero.webp';
-import heroMobile from '../assets/images/hero-mobile.jpg';
+import heroMobile from '../assets/images/hero-mobile.webp';
 
 // Procesa las imágenes con getImage
 const optimizedDesktop = await getImage({
@@ -48,26 +48,16 @@ const optimizedMobile = await getImage({
       class="app-banner h-[calc(100vh_-_250px)] flex items-center justify-center text-center flex-col gap-4"
     >
       <!-- Componente Picture con art direction -->
-      <Picture
-        src={heroDesktop}
-        alt="Appliance repair in Los Altos"
+      <img
+        src={optimizedDesktop.src}
+        srcset={`${optimizedMobile.src} 768w, ${optimizedDesktop.src} 1728w`}
+        sizes="(max-width: 768px) 100vw, 1728px"
         class="absolute inset-0 w-full h-full object-cover -z-10"
+        alt="Appliance repair in Cupertino"
         loading="eager"
+        decoding="auto"
         fetchpriority="high"
-      >
-        <source
-          media="(max-width: 768px)"
-          srcset={optimizedMobile.src}
-          width={optimizedMobile.options.width}
-          height={optimizedMobile.options.height}
-        />
-        <source
-          media="(min-width: 769px)"
-          srcset={optimizedDesktop.src}
-          width={optimizedDesktop.options.width}
-          height={optimizedDesktop.options.height}
-        />
-      </Picture>
+      />
 
       <!-- Gradient overlay -->
       <div class={`absolute inset-0 -z-0 bg-gradient h-full`}></div>

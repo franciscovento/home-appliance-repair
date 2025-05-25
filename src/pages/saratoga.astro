@@ -10,7 +10,7 @@ import Layout from '../layouts/Layout.astro';
 import { benefits } from '../utils/data/benefits';
 import 'aos/dist/aos.css';
 import { brands } from '../utils/data/brands';
-import { getImage, Image, Picture } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 import { services } from '../utils/data/services';
 import WhatsApp from '../components/client/WhatsApp.jsx';
 import heroDesktop from '../assets/images/hero.webp';
@@ -34,13 +34,21 @@ const optimizedMobile = await getImage({
 });
 ---
 
-<Layout>
+<Layout
+  title="Appliance Repair in Saratoga, CA | Smart Nest Repair Experts"
+  keywords="home appliance repairs, Saratoga, California, appliance repair service, refrigerator repair, washer repair, dryer repair, oven repair, dishwasher repair, surrounding areas"
+  description="Smart Nest Repair offers fast, reliable refrigerator, dishwasher, dryer & oven repair in Saratoga, CA. 24/7 emergency service—call (408) 909-1844 today!"
+  geoPlaceName="Saratoga and Surrounding Areas"
+  geoPosition="37.2850;-122.0228"
+  geoICBM="37.2850, -122.0228"
+>
   <main class="app-container pt-[76px]">
     <!-- HERO BANNER -->
     <section
-      class="app-banner h-[calc(100vh_-_250px)] flex items-center justify-center text-center flex-col gap-4"
+      class="app-banner h-[calc(100vh_-_250px)] max-h-[625px] flex items-center justify-center text-center flex-col gap-4"
     >
       <!-- Componente Picture con art direction -->
+
       <img
         src={optimizedDesktop.src}
         srcset={`${optimizedMobile.src} 768w, ${optimizedDesktop.src} 1728w`}
@@ -59,7 +67,7 @@ const optimizedMobile = await getImage({
         data-aos="fade-down"
         class="text-3xl sm:text-4xl lg:text-5xl text-white font-semibold"
       >
-        Appliance Repair in Cupertino, CA
+        Appliance Repair in Saratoga, CA
       </h1>
       <div class="text-xl sm:text-3xl">
         <p data-aos="fade-down" data-aos-delay="200" class="text-white">
@@ -94,12 +102,12 @@ const optimizedMobile = await getImage({
     <section class="pb-12 text-center">
       <SectionTitle title="Why us?" subtitle="Efficiency in every fix." />
       <p data-aos="fade-in" class="pt-12">
-        At Smart Nest Repair, we proudly serve every corner of Cupertino—from
-        the tree-lined streets of Monta Vista (95014) and the bustling shops
-        around Cupertino Village (95015), to the cozy homes of Rancho Rinconada,
-        Lawson, and the Vallco neighborhood. No matter where you’re located, our
+        At Smart Nest Repair, we proudly serve every part of Saratoga—from the
+        scenic neighborhoods of Saratoga Village and the quiet streets of Golden
+        Triangle, to the hillside homes near Quito Road and Blue Hills. Whether
+        you're near the wineries or the serene trails of Hakone Gardens, our
         certified technicians are ready with same-day service and 24/7 emergency
-        repairs to keep your appliances running smoothly
+        repairs to keep your appliances running smoothly.
       </p>
       <div class="sm:hidden pt-8">
         <ImagesSlider />
@@ -251,7 +259,7 @@ const optimizedMobile = await getImage({
       </div>
     </section> -->
     <section class="fixed bottom-0 right-0 z-50">
-      <WhatsApp client:idle />
+      <WhatsApp client:only="react" />
     </section>
   </main>
 </Layout>
