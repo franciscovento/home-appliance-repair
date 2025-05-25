@@ -50,11 +50,10 @@ const optimizedMobile = await getImage({
       <!-- Componente Picture con art direction -->
       <Picture
         src={heroDesktop}
-        alt="Appliance repair team at work"
+        alt="Appliance repair in Los Altos"
         class="absolute inset-0 w-full h-full object-cover -z-10"
         loading="eager"
-        decoding="async"
-        fetchpriority={'high'}
+        fetchpriority="high"
       >
         <source
           media="(max-width: 768px)"
