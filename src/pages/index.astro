@@ -14,7 +14,7 @@ import { getImage, Image, Picture } from 'astro:assets';
 import { services } from '../utils/data/services';
 import WhatsApp from '../components/client/WhatsApp.jsx';
 import heroDesktop from '../assets/images/hero.webp';
-import heroMobile from '../assets/images/hero-mobile.jpg';
+import heroMobile from '../assets/images/hero-mobile.webp';
 
 // Procesa las imágenes con getImage
 const optimizedDesktop = await getImage({
@@ -41,14 +41,16 @@ const optimizedMobile = await getImage({
       class="app-banner h-[calc(100vh_-_250px)] max-h-[625px] flex items-center justify-center text-center flex-col gap-4"
     >
       <!-- Componente Picture con art direction -->
-      <Image
-        src={heroDesktop}
+
+      <img
+        src={optimizedDesktop.src}
+        srcset={`${optimizedMobile.src} 768w, ${optimizedDesktop.src} 1728w`}
+        sizes="(max-width: 768px) 100vw, 1728px"
         class="absolute inset-0 w-full h-full object-cover -z-10"
-        fetchpriority={'high'}
-        loading={'eager'}
         alt="Appliance repair in Cupertino"
-        srcset={`${heroDesktop.src} 1728w, ${heroMobile.src} 768w`}
-        sizes="(max-width: 600px) 600px, (max-width: 1024px) 1024px, 1728px"
+        loading="eager"
+        decoding="auto"
+        fetchpriority="high"
       />
 
       <!-- Gradient overlay -->
