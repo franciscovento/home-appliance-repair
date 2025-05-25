@@ -38,29 +38,18 @@ const optimizedMobile = await getImage({
   <main class="app-container pt-[76px]">
     <!-- HERO BANNER -->
     <section
-      class="app-banner h-[calc(100vh_-_250px)] flex items-center justify-center text-center flex-col gap-4"
+      class="app-banner h-[calc(100vh_-_250px)] max-h-[625px] flex items-center justify-center text-center flex-col gap-4"
     >
       <!-- Componente Picture con art direction -->
-      <Picture
+      <Image
         src={heroDesktop}
-        alt="Appliance repair in Cupertino"
         class="absolute inset-0 w-full h-full object-cover -z-10"
-        loading="eager"
-        fetchpriority="high"
-      >
-        <source
-          media="(max-width: 768px)"
-          srcset={optimizedMobile.src}
-          width={optimizedMobile.options.width}
-          height={optimizedMobile.options.height}
-        />
-        <source
-          media="(min-width: 769px)"
-          srcset={optimizedDesktop.src}
-          width={optimizedDesktop.options.width}
-          height={optimizedDesktop.options.height}
-        />
-      </Picture>
+        fetchpriority={'high'}
+        loading={'eager'}
+        alt="Appliance repair in Cupertino"
+        srcset={`${heroDesktop.src} 1728w, ${heroMobile.src} 768w`}
+        sizes="(max-width: 600px) 600px, (max-width: 1024px) 1024px, 1728px"
+      />
 
       <!-- Gradient overlay -->
       <div class={`absolute inset-0 -z-0 bg-gradient h-full`}></div>
