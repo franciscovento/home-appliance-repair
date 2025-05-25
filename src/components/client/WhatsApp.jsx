@@ -8,7 +8,6 @@ const WhatsApp = () => {
       accountName="Home Appliance Repair"
       statusMessage="Typically replies within 5 minutes"
       allowEsc={true}
-      messageDelay={4000}
       avatar={whatsAppImage.src}
     />
   );
